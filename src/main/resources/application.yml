@@ -1,0 +1,29 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:9090/realms/dive-into
+          jwk-set-uri: http://localhost:9090/realms/dive-into/protocol/openid-connect/certs
+server:
+  port: 8081
+
+jwt:
+  auth:
+    converter:
+      resource-id: dive-into
+      principle-attribute: preferred_username
+
+springdoc:
+  swagger-ui:
+    oauth:
+      client-id: dive-into
+      client-secret: zIu2ex6iFmpPfF8N7my8ugRfShf3xfy5
+
+
+realm: dive-into
+server-url: http://localhost:9090
+client-id: admin-cli
+grant-type: password
+name: admin
+password: admin
